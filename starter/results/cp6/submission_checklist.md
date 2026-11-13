@@ -17,7 +17,7 @@
 ## Còn lại trước khi nộp
 
 - [x] Đã kiểm tra `starter/results/cp5/manual_audit.json`.
-- [ ] Kiểm tra `git diff` và file sẽ commit.
-- [ ] Commit/push bản cuối.
-- [ ] Điền commit SHA thật vào `STUDENT.md`.
-- [ ] Mở repo trên GitHub và kiểm tra quyền truy cập.
+- [x] Đã kiểm tra `git diff` và danh sách file commit.
+- [x] Đã commit và push lên nhánh `main`.
+- [x] Đã điền commit SHA vào `STUDENT.md`.
+- [x] Đã mở repo trên GitHub và kiểm tra quyền truy cập.
