@@ -1,0 +1,85 @@
+{
+  "review_method": {
+    "reviewer": "Student review with AI assistance",
+    "coherence_scale": "0 = cut/incomprehensible; 1 = partly understandable but missing context; 2 = self-contained complete idea",
+    "grounding_scale": "0 = no answering evidence; 1 = partial evidence or a missing condition; 2 = sufficient evidence and traceable source",
+    "notes": "Scores were assigned from chunk text, not cosine score. Equivalent evidence can receive grounding credit even when strict gold-quote matching fails. No strategy parameter was changed after reviewing test results."
+  },
+  "coherence": {
+    "selection": "Ten dev evidence positions frozen in starter/src/cp5.py; for A and B select the same source/page chunk with maximum evidence-token overlap, independent of retrieval score.",
+    "records": [
+      {"position_id": "q01", "strategy": "A", "chunk_id": "A:bert-1810.04805v2:p0003:c0006:557ea991603d", "score": 1, "reason": "Contains the model-size evidence, but begins mid-sentence and ends after the incomplete phrase 'OpenAI'."},
+      {"position_id": "q01", "strategy": "B", "chunk_id": "B:bert-1810.04805v2:p0003:c0004:802ce7a726bd", "score": 2, "reason": "Introduces the architecture notation and retains the complete BERTBASE/BERTLARGE comparison."},
+      {"position_id": "q02", "strategy": "A", "chunk_id": "A:bert-1810.04805v2:p0004:c0002:fba5e7b44e2e", "score": 1, "reason": "The central input-representation claim is complete, but the chunk starts and ends inside surrounding sentences."},
+      {"position_id": "q02", "strategy": "B", "chunk_id": "B:bert-1810.04805v2:p0004:c0001:c51ee3f251f6", "score": 2, "reason": "Retains the embedding context, complete claim, and following section boundary."},
+      {"position_id": "q03", "strategy": "A", "chunk_id": "A:bert-1810.04805v2:p0004:c0007:f1fa95303467", "score": 1, "reason": "Explains the masking setup but cuts off before completing the final 10% case."},
+      {"position_id": "q03", "strategy": "B", "chunk_id": "B:bert-1810.04805v2:p0004:c0004:fdfd8618353e", "score": 2, "reason": "Preserves the mismatch motivation, all 80/10/10 cases, loss, and section boundary."},
+      {"position_id": "q06", "strategy": "A", "chunk_id": "A:sentence-bert-1908.10084v1:p0001:c0001:d92f87abb00e", "score": 1, "reason": "The runtime evidence is present, but the chunk begins after its subject and ends inside the SBERT description."},
+      {"position_id": "q06", "strategy": "B", "chunk_id": "B:sentence-bert-1908.10084v1:p0001:c0000:b6e57b8201d0", "score": 2, "reason": "The abstract supplies the BERT comparison, computational cost, and conclusion as one coherent unit."},
+      {"position_id": "q07", "strategy": "A", "chunk_id": "A:sentence-bert-1908.10084v1:p0001:c0002:d39b65690544", "score": 1, "reason": "Starts with 'network' without naming SBERT and ends in a detached footnote marker."},
+      {"position_id": "q07", "strategy": "B", "chunk_id": "B:sentence-bert-1908.10084v1:p0001:c0001:863822318056", "score": 2, "reason": "Names SBERT and keeps the architecture, comparison method, efficiency result, and evaluation context together."},
+      {"position_id": "q08", "strategy": "A", "chunk_id": "A:sentence-bert-1908.10084v1:p0002:c0000:e91c1043a45e", "score": 1, "reason": "The timing claim is usable, but the chunk begins after the missing lead-in and ends inside the next result."},
+      {"position_id": "q08", "strategy": "B", "chunk_id": "B:sentence-bert-1908.10084v1:p0002:c0000:9220c064cb8a", "score": 2, "reason": "Keeps the full timing comparison and the complete following performance context."},
+      {"position_id": "q11", "strategy": "A", "chunk_id": "A:dpr-2004.04906v3:p0001:c0001:69a704e1196b", "score": 1, "reason": "Begins in a dependent clause and cuts off before the word 'accuracy', leaving the result incomplete."},
+      {"position_id": "q11", "strategy": "B", "chunk_id": "B:dpr-2004.04906v3:p0001:c0001:f5eed28c92ce", "score": 2, "reason": "Preserves the retrieval motivation, dense method, full 9%-19% result, and implication."},
+      {"position_id": "q12", "strategy": "A", "chunk_id": "A:dpr-2004.04906v3:p0003:c0000:14a35ab38bce", "score": 1, "reason": "The formula is complete, but the chunk ends inside the explanation that follows it."},
+      {"position_id": "q12", "strategy": "B", "chunk_id": "B:dpr-2004.04906v3:p0003:c0000:258bf10cd7a3", "score": 2, "reason": "Keeps the dot-product formula and a complete explanation of why decomposability matters."},
+      {"position_id": "q16", "strategy": "A", "chunk_id": "A:rag-2005.11401v4:p0001:c0002:73aeee1f1ed8", "score": 1, "reason": "Contains both memories but starts and ends inside surrounding ideas."},
+      {"position_id": "q16", "strategy": "B", "chunk_id": "B:rag-2005.11401v4:p0001:c0002:1507804f8600", "score": 2, "reason": "Defines both memory types and retains the complete formulation and result context."},
+      {"position_id": "q17", "strategy": "A", "chunk_id": "A:rag-2005.11401v4:p0003:c0000:5fd8aefbdc26", "score": 1, "reason": "Starts in a prior sentence and cuts off before completing the RAG-Token contrast."},
+      {"position_id": "q17", "strategy": "B", "chunk_id": "B:rag-2005.11401v4:p0003:c0000:c57ba77fc791", "score": 2, "reason": "Retains both complete formulation definitions and the transition to their formal models."}
+    ],
+    "summary": {
+      "A": {"score_sum": 10, "positions": 10, "mean_out_of_2": 1.0, "distribution": {"0": 0, "1": 10, "2": 0}},
+      "B": {"score_sum": 20, "positions": 10, "mean_out_of_2": 2.0, "distribution": {"0": 0, "1": 0, "2": 10}},
+      "C": {"status": "not rescored because C uses chunks identical to B", "mean_out_of_2": 2.0}
+    }
+  },
+  "grounding": {
+    "scope": "All five frozen test questions, each assessed from the strategy's complete top-3.",
+    "records": [
+      {"question_id": "q05", "strategy": "A", "score": 2, "supporting_ranks": [3], "reason": "Rank 3 directly states token representations versus [CLS] and is traceable to BERT page 5."},
+      {"question_id": "q05", "strategy": "B", "score": 2, "supporting_ranks": [1], "reason": "Rank 1 directly and completely answers both sides of the comparison."},
+      {"question_id": "q05", "strategy": "C", "score": 2, "supporting_ranks": [1], "reason": "Same sufficient evidence as B; this question supplies no filter."},
+      {"question_id": "q10", "strategy": "A", "score": 2, "supporting_ranks": [2], "reason": "Rank 2 contains the exact gold statement that MEAN is the default pooling strategy."},
+      {"question_id": "q10", "strategy": "B", "score": 2, "supporting_ranks": [1], "reason": "Rank 1 contains equivalent evidence on page 3: 'The default configuration is MEAN', despite not matching the page-4 gold quote."},
+      {"question_id": "q10", "strategy": "C", "score": 2, "supporting_ranks": [1], "reason": "Same equivalent, sufficient, traceable evidence as B."},
+      {"question_id": "q15", "strategy": "A", "score": 2, "supporting_ranks": [3], "reason": "Rank 3 contains the complete formal definition including CF, k, and k much smaller than the corpus."},
+      {"question_id": "q15", "strategy": "B", "score": 1, "supporting_ranks": [1, 3], "reason": "Top-3 explains that retrieval selects a small subset, but omits the requested formal CF and k much-smaller-than-C condition."},
+      {"question_id": "q15", "strategy": "C", "score": 1, "supporting_ranks": [1, 3], "reason": "Same partial evidence as B; this question supplies no filter."},
+      {"question_id": "q19", "strategy": "A", "score": 0, "supporting_ranks": [], "reason": "Top-3 describes RAG components but never states which encoder/index is fixed versus fine-tuned."},
+      {"question_id": "q19", "strategy": "B", "score": 0, "supporting_ranks": [], "reason": "Top-3 lacks the required fixed/fine-tuned component distinction; rank 1 only says generator and retriever are jointly learned."},
+      {"question_id": "q19", "strategy": "C", "score": 0, "supporting_ranks": [], "reason": "The venue filter is obeyed, but all candidates were already from the RAG paper and the needed page-4 evidence is absent."},
+      {"question_id": "q20", "strategy": "A", "score": 1, "supporting_ranks": [1], "reason": "Rank 1 says knowledge can be updated by replacing non-parametric memory, but omits the contrast that parametric-only models require further training."},
+      {"question_id": "q20", "strategy": "B", "score": 2, "supporting_ranks": [1], "reason": "Rank 1 completely states both easy index updating and the further-training requirement for T5/BART."},
+      {"question_id": "q20", "strategy": "C", "score": 2, "supporting_ranks": [1], "reason": "Same complete, traceable evidence as B; this question supplies no filter."}
+    ],
+    "summary": {
+      "A": {"score_sum": 7, "questions": 5, "mean_out_of_2": 1.4, "distribution": {"0": 1, "1": 1, "2": 3}},
+      "B": {"score_sum": 7, "questions": 5, "mean_out_of_2": 1.4, "distribution": {"0": 1, "1": 1, "2": 3}},
+      "C": {"score_sum": 7, "questions": 5, "mean_out_of_2": 1.4, "distribution": {"0": 1, "1": 1, "2": 3}}
+    }
+  },
+  "metadata": {
+    "scope": "5 test questions x top-3 x 3 strategies",
+    "complete_and_correct": 45,
+    "records_checked": 45,
+    "rate": 1.0,
+    "useful_fields": "document_id/source/page support traceability; venue/year/method/document_type/language support trusted filters.",
+    "limitation": "Document-level metadata cannot distinguish sections within a page, and a correct filter cannot recover a relevant chunk that semantic ranking misses."
+  },
+  "filter_compliance": {
+    "C_all_filtered_questions": {"fully_compliant_questions": 4, "questions": 4, "compliant_results": 12, "results": 12},
+    "C_test_only": {"fully_compliant_questions": 1, "questions": 1, "compliant_results": 3, "results": 3},
+    "A_and_B": "N/A: filters intentionally not applied",
+    "observed_impact": "B and C had identical Hit@1/Hit@3 because the unfiltered B results for these scoped questions were already within the requested metadata range."
+  },
+  "strategy_selection": {
+    "predeclared_rule": "Highest dev Evidence Hit@3, then dev Hit@1, then grounding, coherence, and resource use.",
+    "dev_evidence_hit_at_3": {"A": "9/15", "B": "9/15", "C": "9/15"},
+    "dev_hit_at_1": {"A": "8/15", "B": "5/15", "C": "5/15"},
+    "selected_before_test_interpretation": "A",
+    "reason": "All strategies tie on the first criterion; A wins the second criterion. Coherence and resource use are later tie-breakers and therefore do not override dev Hit@1.",
+    "test_is_reported_only_as_holdout": true
+  }
+}

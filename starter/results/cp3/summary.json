@@ -1,0 +1,106 @@
+{
+  "checkpoint": "CP3",
+  "generated_at": "2026-11-13T07:54:56.442182+00:00",
+  "corpus_id": "dense-retrieval-rag-foundations",
+  "normalization": {
+    "unicode": "NFC",
+    "whitespace": "collapse horizontal whitespace; preserve inferred paragraph boundaries",
+    "dehyphenation": false,
+    "reason": "avoid changing technical terms without layout/OCR evidence"
+  },
+  "documents": [
+    {
+      "document_id": "bert-1810.04805v2",
+      "physical_pages": 16,
+      "included_pages": 13,
+      "excluded_pages": 3,
+      "normalized_characters": 50825,
+      "extraction_issues": 0,
+      "sha256_verified": true
+    },
+    {
+      "document_id": "sentence-bert-1908.10084v1",
+      "physical_pages": 11,
+      "included_pages": 8,
+      "excluded_pages": 3,
+      "normalized_characters": 32904,
+      "extraction_issues": 0,
+      "sha256_verified": true
+    },
+    {
+      "document_id": "dpr-2004.04906v3",
+      "physical_pages": 13,
+      "included_pages": 11,
+      "excluded_pages": 2,
+      "normalized_characters": 46448,
+      "extraction_issues": 0,
+      "sha256_verified": true
+    },
+    {
+      "document_id": "rag-2005.11401v4",
+      "physical_pages": 19,
+      "included_pages": 13,
+      "excluded_pages": 6,
+      "normalized_characters": 48138,
+      "extraction_issues": 0,
+      "sha256_verified": true
+    }
+  ],
+  "totals": {
+    "physical_pages": 59,
+    "included_pages": 45,
+    "excluded_pages": 14,
+    "normalized_characters": 178315,
+    "empty_or_error_pages": 0,
+    "elapsed_seconds": 2.524,
+    "cost_usd": 0
+  },
+  "strategy_A": {
+    "description": "fixed-size page-scoped character windows",
+    "size": 500,
+    "overlap": 50,
+    "chunk_count": 416,
+    "characters_total_with_overlap": 196179,
+    "characters_min": 55,
+    "characters_max": 500,
+    "characters_mean": 471.58,
+    "characters_median": 497.0,
+    "characters_p95": 500
+  },
+  "strategy_B": {
+    "description": "structure-aware paragraph/sentence grouping, page-scoped",
+    "max_size": 1000,
+    "overlap": 0,
+    "chunk_count": 253,
+    "characters_total_with_overlap": 178420,
+    "characters_min": 108,
+    "characters_max": 1000,
+    "characters_mean": 705.22,
+    "characters_median": 760,
+    "characters_p95": 969
+  },
+  "strategy_C_plan": {
+    "chunking": "identical to strategy B",
+    "only_change": "apply trusted manifest metadata filters when the question supplies a filter"
+  },
+  "metadata_fields": {
+    "document_id": "manifest source_id",
+    "source": "manifest source_path_or_url",
+    "page": "1-based physical PDF page",
+    "year": "manifest year; filterable",
+    "venue": "manifest venue; filterable",
+    "method": "manifest method; filterable",
+    "document_type": "manifest document_type; filterable",
+    "language": "manifest corpus language; filterable"
+  },
+  "validation": {
+    "pdf_hashes": "passed",
+    "physical_page_counts": "passed",
+    "included_page_counts": "passed",
+    "normalized_character_counts": "passed",
+    "selected_pages_nonempty": "passed",
+    "chunk_ids_unique": "passed",
+    "chunk_size_limits": "passed",
+    "traceability_metadata": "passed"
+  }
+}

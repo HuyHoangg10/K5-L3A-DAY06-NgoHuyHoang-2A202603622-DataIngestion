@@ -1,0 +1,253 @@
+[
+  {
+    "strategy": "A",
+    "question": "According to the NAACL-HLT 2019 paper, how is a token's input representation constructed in BERT?",
+    "filter": null,
+    "top_k": 3,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "A:bert-1810.04805v2:p0004:c0002:fba5e7b44e2e",
+        "text": "them with a special token ([SEP]). Second, we add a learned embed- ding to every token indicating whether it belongs to sentence A or sentence B. As shown in Figure 1, we denote input embedding asE, the ﬁnal hidden vector of the special [CLS] token as C ∈ RH, and the ﬁnal hidden vector for the ith input token asTi∈ RH.\n\nFor a given token, its input representation is constructed by summing the corresponding token, segment, and position embeddings. A visualiza- tion of this construction can be",
+        "score": 0.8203928367442159,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 1398,
+          "char_start": 902,
+          "chunk_characters": 496,
+          "chunk_index": 2,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "A",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 2,
+        "chunk_id": "A:bert-1810.04805v2:p0004:c0000:d28a65865c34",
+        "text": "Input/Output Representations To make BERT handle a variety of down-stream tasks, our input representation is able to unambiguously represent both a single sentence and a pair of sentences (e.g.,⟨ Question, Answer⟩) in one token sequence.\n\nThroughout this work, a “sentence” can be an arbi- trary span of contiguous text, rather than an actual linguistic sentence. A “sequence” refers to the in- put token sequence to BERT, which may be a sin- gle sentence or two sentences packed together.\n\nWe use",
+        "score": 0.7898829287436304,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 497,
+          "char_start": 0,
+          "chunk_characters": 497,
+          "chunk_index": 0,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "A",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 3,
+        "chunk_id": "A:bert-1810.04805v2:p0005:c0000:2f855ace8dcd",
+        "text": "[CLS] he likes play ##ing [SEP]my dog is cute [SEP]Input E[CLS] Ehe Elikes Eplay E##ing E[SEP]Emy Edog Eis Ecute E[SEP] Token Embeddings EA EB EB EB EB EBEA EA EA EA EASegmentEmbeddings E0 E6 E7 E8 E9 E10E1 E2 E3 E4 E5PositionEmbeddings Figure 2: BERT input representation. The input embeddings are the sum of the token embeddings, the segmenta- tion embeddings and the position embeddings.\n\nThe NSP task is closely related to representation- learning objectives used in Jernite et al. (2017) and",
+        "score": 0.7781562391222101,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 5,
+        "metadata": {
+          "char_end": 496,
+          "char_start": 0,
+          "chunk_characters": 496,
+          "chunk_index": 0,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 3856,
+          "strategy": "A",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      }
+    ]
+  },
+  {
+    "strategy": "B",
+    "question": "According to the NAACL-HLT 2019 paper, how is a token's input representation constructed in BERT?",
+    "filter": null,
+    "top_k": 3,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "B:bert-1810.04805v2:p0004:c0001:c51ee3f251f6",
+        "text": "We use WordPiece embeddings (Wu et al., 2016) with a 30,000 token vocabulary. The ﬁrst token of every sequence is always a special clas- siﬁcation token ( [CLS]). The ﬁnal hidden state corresponding to this token is used as the ag- gregate sequence representation for classiﬁcation tasks. Sentence pairs are packed together into a single sequence. We differentiate the sentences in two ways. First, we separate them with a special token ([SEP]). Second, we add a learned embed- ding to every token indicating whether it belongs to sentence A or sentence B. As shown in Figure 1, we denote input embedding asE, the ﬁnal hidden vector of the special [CLS] token as C ∈ RH, and the ﬁnal hidden vector for the ith input token asTi∈ RH.\n\nFor a given token, its input representation is constructed by summing the corresponding token, segment, and position embeddings. A visualiza- tion of this construction can be seen in Figure 2.\n\n3.1 Pre-training BERT",
+        "score": 0.7871783612339854,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 1439,
+          "char_start": 491,
+          "chunk_characters": 948,
+          "chunk_index": 1,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 2,
+        "chunk_id": "B:bert-1810.04805v2:p0004:c0000:672ee09f6ab5",
+        "text": "Input/Output Representations To make BERT handle a variety of down-stream tasks, our input representation is able to unambiguously represent both a single sentence and a pair of sentences (e.g.,⟨ Question, Answer⟩) in one token sequence.\n\nThroughout this work, a “sentence” can be an arbi- trary span of contiguous text, rather than an actual linguistic sentence. A “sequence” refers to the in- put token sequence to BERT, which may be a sin- gle sentence or two sentences packed together.",
+        "score": 0.7812788920630118,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 489,
+          "char_start": 0,
+          "chunk_characters": 489,
+          "chunk_index": 0,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 3,
+        "chunk_id": "B:bert-1810.04805v2:p0005:c0002:b0074c4e1081",
+        "text": "For each task, we simply plug in the task- speciﬁc inputs and outputs into BERT and ﬁne- tune all the parameters end-to-end. At the in- put, sentence A and sentence B from pre-training are analogous to (1) sentence pairs in paraphras- ing, (2) hypothesis-premise pairs in entailment, (3) question-passage pairs in question answering, and (4) a degenerate text- ∅ pair in text classiﬁcation or sequence tagging. At the output, the token rep- resentations are fed into an output layer for token- level tasks, such as sequence tagging or question answering, and the [CLS] representation is fed into an output layer for classiﬁcation, such as en- tailment or sentiment analysis.",
+        "score": 0.7799149049357008,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 5,
+        "metadata": {
+          "char_end": 2542,
+          "char_start": 1868,
+          "chunk_characters": 674,
+          "chunk_index": 2,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 3856,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      }
+    ]
+  },
+  {
+    "strategy": "C",
+    "question": "According to the NAACL-HLT 2019 paper, how is a token's input representation constructed in BERT?",
+    "filter": {
+      "venue": "NAACL-HLT 2019"
+    },
+    "top_k": 3,
+    "results": [
+      {
+        "rank": 1,
+        "chunk_id": "B:bert-1810.04805v2:p0004:c0001:c51ee3f251f6",
+        "text": "We use WordPiece embeddings (Wu et al., 2016) with a 30,000 token vocabulary. The ﬁrst token of every sequence is always a special clas- siﬁcation token ( [CLS]). The ﬁnal hidden state corresponding to this token is used as the ag- gregate sequence representation for classiﬁcation tasks. Sentence pairs are packed together into a single sequence. We differentiate the sentences in two ways. First, we separate them with a special token ([SEP]). Second, we add a learned embed- ding to every token indicating whether it belongs to sentence A or sentence B. As shown in Figure 1, we denote input embedding asE, the ﬁnal hidden vector of the special [CLS] token as C ∈ RH, and the ﬁnal hidden vector for the ith input token asTi∈ RH.\n\nFor a given token, its input representation is constructed by summing the corresponding token, segment, and position embeddings. A visualiza- tion of this construction can be seen in Figure 2.\n\n3.1 Pre-training BERT",
+        "score": 0.7871783612339854,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 1439,
+          "char_start": 491,
+          "chunk_characters": 948,
+          "chunk_index": 1,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 2,
+        "chunk_id": "B:bert-1810.04805v2:p0004:c0000:672ee09f6ab5",
+        "text": "Input/Output Representations To make BERT handle a variety of down-stream tasks, our input representation is able to unambiguously represent both a single sentence and a pair of sentences (e.g.,⟨ Question, Answer⟩) in one token sequence.\n\nThroughout this work, a “sentence” can be an arbi- trary span of contiguous text, rather than an actual linguistic sentence. A “sequence” refers to the in- put token sequence to BERT, which may be a sin- gle sentence or two sentences packed together.",
+        "score": 0.7812788920630118,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 4,
+        "metadata": {
+          "char_end": 489,
+          "char_start": 0,
+          "chunk_characters": 489,
+          "chunk_index": 0,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 4860,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      },
+      {
+        "rank": 3,
+        "chunk_id": "B:bert-1810.04805v2:p0005:c0002:b0074c4e1081",
+        "text": "For each task, we simply plug in the task- speciﬁc inputs and outputs into BERT and ﬁne- tune all the parameters end-to-end. At the in- put, sentence A and sentence B from pre-training are analogous to (1) sentence pairs in paraphras- ing, (2) hypothesis-premise pairs in entailment, (3) question-passage pairs in question answering, and (4) a degenerate text- ∅ pair in text classiﬁcation or sequence tagging. At the output, the token rep- resentations are fed into an output layer for token- level tasks, such as sequence tagging or question answering, and the [CLS] representation is fed into an output layer for classiﬁcation, such as en- tailment or sentiment analysis.",
+        "score": 0.7799149049357008,
+        "document_id": "bert-1810.04805v2",
+        "source": "https://arxiv.org/pdf/1810.04805v2",
+        "page": 5,
+        "metadata": {
+          "char_end": 2542,
+          "char_start": 1868,
+          "chunk_characters": 674,
+          "chunk_index": 2,
+          "corpus_id": "dense-retrieval-rag-foundations",
+          "document_type": "research_paper",
+          "extraction_status": "ok",
+          "language": "en",
+          "method": "transformer_pretraining",
+          "normalized_characters": 3856,
+          "strategy": "B",
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "venue": "NAACL-HLT 2019",
+          "year": 2018
+        }
+      }
+    ]
+  }
+]

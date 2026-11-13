@@ -1,0 +1,195 @@
+{
+  "checkpoint": "CP5",
+  "generated_at": "2026-11-13T08:33:43.744551+00:00",
+  "frozen_inputs": {
+    "benchmark_questions": 20,
+    "dev": 15,
+    "test": 5,
+    "model_id": "google/embeddinggemma-2",
+    "model_revision": "f9972ac22e696a105c482202646979e33e4b5a1e",
+    "vector_store_counts": {
+      "A": 416,
+      "B": 253,
+      "C": 253
+    },
+    "top_k": 3,
+    "configuration_changed_after_viewing_test": false
+  },
+  "retrieval": {
+    "queries_embedded_once": 20,
+    "strategy_question_traces": 60,
+    "retrieved_results": 180,
+    "query_embedding_seconds": 2.564,
+    "total_seconds": 10.716,
+    "api_cost_usd": 0
+  },
+  "metrics": {
+    "A": {
+      "dev": {
+        "questions": 15,
+        "hit_at_1": {
+          "hits": 8,
+          "total": 15,
+          "rate": 0.5333
+        },
+        "evidence_hit_at_3": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        }
+      },
+      "test": {
+        "questions": 5,
+        "hit_at_1": {
+          "hits": 0,
+          "total": 5,
+          "rate": 0.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 3,
+          "total": 5,
+          "rate": 0.6
+        }
+      }
+    },
+    "B": {
+      "dev": {
+        "questions": 15,
+        "hit_at_1": {
+          "hits": 5,
+          "total": 15,
+          "rate": 0.3333
+        },
+        "evidence_hit_at_3": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        }
+      },
+      "test": {
+        "questions": 5,
+        "hit_at_1": {
+          "hits": 2,
+          "total": 5,
+          "rate": 0.4
+        },
+        "evidence_hit_at_3": {
+          "hits": 2,
+          "total": 5,
+          "rate": 0.4
+        }
+      }
+    },
+    "C": {
+      "dev": {
+        "questions": 15,
+        "hit_at_1": {
+          "hits": 5,
+          "total": 15,
+          "rate": 0.3333
+        },
+        "evidence_hit_at_3": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        }
+      },
+      "test": {
+        "questions": 5,
+        "hit_at_1": {
+          "hits": 2,
+          "total": 5,
+          "rate": 0.4
+        },
+        "evidence_hit_at_3": {
+          "hits": 2,
+          "total": 5,
+          "rate": 0.4
+        }
+      }
+    }
+  },
+  "filter_compliance": {
+    "A": {
+      "questions_requesting_filter": 4,
+      "questions_with_filter_applied": 0,
+      "fully_compliant_questions": 0,
+      "compliant_results": 0,
+      "retrieved_results_under_applied_filters": 0,
+      "note": "A/B intentionally do not apply filters; C applies only supplied filters."
+    },
+    "B": {
+      "questions_requesting_filter": 4,
+      "questions_with_filter_applied": 0,
+      "fully_compliant_questions": 0,
+      "compliant_results": 0,
+      "retrieved_results_under_applied_filters": 0,
+      "note": "A/B intentionally do not apply filters; C applies only supplied filters."
+    },
+    "C": {
+      "questions_requesting_filter": 4,
+      "questions_with_filter_applied": 4,
+      "fully_compliant_questions": 4,
+      "compliant_results": 12,
+      "retrieved_results_under_applied_filters": 12,
+      "note": "A/B intentionally do not apply filters; C applies only supplied filters."
+    }
+  },
+  "metadata_audit_precheck": {
+    "records": 45,
+    "complete_and_correct": 45,
+    "scope": "5 test questions x top-3 x 3 strategies"
+  },
+  "manual_audit_plan": {
+    "reviewer": "student review with AI assistance",
+    "coherence_positions": [
+      "q01",
+      "q02",
+      "q03",
+      "q06",
+      "q07",
+      "q08",
+      "q11",
+      "q12",
+      "q16",
+      "q17"
+    ],
+    "coherence_candidates": 20,
+    "grounding_test_questions": [
+      "q05",
+      "q10",
+      "q15",
+      "q19",
+      "q20"
+    ],
+    "grounding_strategy_cases": 15,
+    "score_definition": {
+      "coherence": "0=cut/incomprehensible, 1=partly understandable, 2=self-contained complete idea",
+      "grounding": "0=no evidence, 1=partial/missing context, 2=sufficient and traceable"
+    }
+  },
+  "manual_audit_results": {
+    "status": "manual review complete",
+    "coherence_mean_out_of_2": {
+      "A": 1.0,
+      "B": 2.0,
+      "C": "same chunks as B; not separately rescored"
+    },
+    "grounding_mean_out_of_2": {
+      "A": 1.4,
+      "B": 1.4,
+      "C": 1.4
+    },
+    "selected_strategy_by_frozen_dev_rule": "A",
+    "selection_reason": "Dev Evidence Hit@3 tied at 9/15; A won the next criterion, dev Hit@1, with 8/15 versus 5/15 for B/C."
+  },
+  "artifacts": {
+    "full_trace_local": "starter/results/cp5/retrieval_traces.local.jsonl",
+    "versionable_trace_index": "starter/results/cp5/retrieval_trace_index.jsonl",
+    "metrics": "starter/results/cp5/metrics.json",
+    "metadata_audit": "starter/results/cp5/metadata_audit.jsonl",
+    "coherence_candidates_local": "starter/results/cp5/coherence_candidates.local.jsonl",
+    "grounding_candidates_local": "starter/results/cp5/grounding_candidates.local.jsonl"
+    ,"manual_audit": "starter/results/cp5/manual_audit.json"
+  }
+}

@@ -8,3 +8,21 @@ __pycache__/
 .DS_Store
 .pytest_cache/
 *.sqlite
+
+# Corpus PDFs are kept local. Most selected arXiv papers do not grant
+# third-party redistribution rights; reproduce the corpus from data/manifest.json.
+data/papers/*.pdf
+!data/papers/.gitkeep
+
+# CP3 full-text derivatives stay local under the corpus redistribution policy.
+# The audit, issue log, and aggregate summary remain versionable evidence.
+starter/results/cp3/*.local.jsonl
+
+# Reproducible local Qdrant data; summaries/traces remain versionable.
+starter/qdrant_storage/
+
+# CP5 full chunk text stays local; compact trace/metrics/audits are versionable.
+starter/results/cp5/*.local.jsonl
+
+# Default portable location for the large local embedding model cache.
+.model_cache/

@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed character windows,500,50,document_id|source|page|year|venue|method|document_type|language,none,"google/embeddinggemma-2 local; 768d","Fixed windows provide a reproducible baseline but may cut an idea across chunk boundaries.","8/15 (53.33%)","9/15 (60.00%)","0/5 (0.00%)","3/5 (60.00%)","Selected by frozen dev rule; coherence 1.0/2; grounding 1.4/2"
+B,structure-aware paragraph/sentence grouping,1000,0,document_id|source|page|year|venue|method|document_type|language,none,"google/embeddinggemma-2 local; 768d","Structure-aware chunks should preserve more complete evidence and improve coherence over A.","5/15 (33.33%)","9/15 (60.00%)","2/5 (40.00%)","2/5 (40.00%)","Coherence 2.0/2; grounding 1.4/2"
+C,identical to B,1000,0,document_id|source|page|year|venue|method|document_type|language,year|venue|method|document_type|language,"google/embeddinggemma-2 local; 768d","Trusted user-supplied metadata filters should reduce out-of-scope results on filtered questions; unfiltered questions remain identical to B.","5/15 (33.33%)","9/15 (60.00%)","2/5 (40.00%)","2/5 (40.00%)","12/12 filtered results compliant; metrics unchanged versus B; grounding 1.4/2"

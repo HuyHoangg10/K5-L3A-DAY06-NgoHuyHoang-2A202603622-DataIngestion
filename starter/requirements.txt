@@ -1,4 +1,7 @@
-# Core setup and PDF parsing. Choose and install an embedding SDK separately.
+# Reproducible CP1-CP4 environment: PDF parsing, local embeddings, and vector store.
 psycopg[binary]==3.3.8
 pypdf>=5,<7
 python-dotenv>=1,<2
+qdrant-client==1.20.0
+sentence-transformers==6.3.0
+torch==2.15.0

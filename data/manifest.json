@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "corpus_id": "dense-retrieval-rag-foundations",
+  "title": "Evolution of Dense Semantic Retrieval and Retrieval-Augmented Generation",
+  "accessed_at": "2026-11-13",
+  "language": "en",
+  "text_normalization_rule": "Unicode NFC; remove control characters; collapse horizontal whitespace; preserve inferred paragraph boundaries; do not guess at PDF line-end dehyphenation. Character counts collapse all remaining whitespace to one space.",
+  "page_count_rule": "Count PDF pages containing the paper body or substantive appendices. Exclude reference-only pages, acknowledgements/reference pages, blank pages, covers, and tables of contents. A mixed acknowledgements/references page is excluded conservatively.",
+  "physical_pages_total": 59,
+  "included_pages_total": 45,
+  "included_characters_normalized_total": 178315,
+  "corpus_requirement_status": "pass: 45 included pages >= 30 required pages",
+  "redistribution_policy": "PDF files remain local and are ignored by Git. Recreate the corpus from the versioned arXiv PDF URLs below, then verify SHA-256. This conservative policy avoids redistributing papers that use the arXiv non-exclusive distribution license.",
+  "documents": [
+    {
+      "source_id": "bert-1810.04805v2",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "authors": [
+        "Jacob Devlin",
+        "Ming-Wei Chang",
+        "Kenton Lee",
+        "Kristina Toutanova"
+      ],
+      "year": 2018,
+      "venue": "NAACL-HLT 2019",
+      "method": "transformer_pretraining",
+      "document_type": "research_paper",
+      "source_path_or_url": "https://arxiv.org/pdf/1810.04805v2",
+      "abstract_url": "https://arxiv.org/abs/1810.04805v2",
+      "local_path": "data/papers/bert-1810.04805.pdf",
+      "license_or_permission": {
+        "name": "arXiv non-exclusive distribution license 1.0",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "redistribute_pdf_in_repo": false,
+        "note": "The arXiv license authorizes arXiv distribution; it is not treated as a general third-party redistribution license."
+      },
+      "physical_pages": 16,
+      "included_page_ranges": ["1-9", "13-16"],
+      "excluded_page_ranges": [
+        {"range": "10-12", "reason": "references"}
+      ],
+      "included_pages_count": 13,
+      "included_characters_normalized": 50825,
+      "sha256": "5692a5514787a8c6727b4ff3b726a3385798bc68e12138d1d4af83947e2acf6e"
+    },
+    {
+      "source_id": "sentence-bert-1908.10084v1",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "authors": ["Nils Reimers", "Iryna Gurevych"],
+      "year": 2019,
+      "venue": "EMNLP-IJCNLP 2019",
+      "method": "sentence_embedding",
+      "document_type": "research_paper",
+      "source_path_or_url": "https://arxiv.org/pdf/1908.10084v1",
+      "abstract_url": "https://arxiv.org/abs/1908.10084v1",
+      "local_path": "data/papers/sentence-bert-1908.10084.pdf",
+      "license_or_permission": {
+        "name": "Creative Commons Attribution-ShareAlike 4.0 International",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribute_pdf_in_repo": true,
+        "note": "The project still keeps all corpus PDFs local for one consistent, reproducible policy."
+      },
+      "physical_pages": 11,
+      "included_page_ranges": ["1-8"],
+      "excluded_page_ranges": [
+        {"range": "9-11", "reason": "acknowledgements and references; page 9 is mixed and excluded conservatively"}
+      ],
+      "included_pages_count": 8,
+      "included_characters_normalized": 32904,
+      "sha256": "92366d22fc0521350d6cbe0ad72bcee754f90e88181d7b4a8e2adb1e7e594fec"
+    },
+    {
+      "source_id": "dpr-2004.04906v3",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "authors": [
+        "Vladimir Karpukhin",
+        "Barlas Oguz",
+        "Sewon Min",
+        "Patrick Lewis",
+        "Ledell Wu",
+        "Sergey Edunov",
+        "Danqi Chen",
+        "Wen-tau Yih"
+      ],
+      "year": 2020,
+      "venue": "EMNLP 2020",
+      "method": "dense_passage_retrieval",
+      "document_type": "research_paper",
+      "source_path_or_url": "https://arxiv.org/pdf/2004.04906v3",
+      "abstract_url": "https://arxiv.org/abs/2004.04906v3",
+      "local_path": "data/papers/dense-passage-retrieval-2004.04906.pdf",
+      "license_or_permission": {
+        "name": "arXiv non-exclusive distribution license 1.0",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "redistribute_pdf_in_repo": false,
+        "note": "The arXiv license authorizes arXiv distribution; it is not treated as a general third-party redistribution license."
+      },
+      "physical_pages": 13,
+      "included_page_ranges": ["1-9", "12-13"],
+      "excluded_page_ranges": [
+        {"range": "10-11", "reason": "references"}
+      ],
+      "included_pages_count": 11,
+      "included_characters_normalized": 46448,
+      "sha256": "3e67fc1a9977715acf722d85f0b7d124b03715e975f6310a4d6c12094190912f"
+    },
+    {
+      "source_id": "rag-2005.11401v4",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": [
+        "Patrick Lewis",
+        "Ethan Perez",
+        "Aleksandra Piktus",
+        "Fabio Petroni",
+        "Vladimir Karpukhin",
+        "Naman Goyal",
+        "Heinrich Kuttler",
+        "Mike Lewis",
+        "Wen-tau Yih",
+        "Tim Rocktaschel",
+        "Sebastian Riedel",
+        "Douwe Kiela"
+      ],
+      "year": 2020,
+      "venue": "NeurIPS 2020",
+      "method": "retrieval_augmented_generation",
+      "document_type": "research_paper",
+      "source_path_or_url": "https://arxiv.org/pdf/2005.11401v4",
+      "abstract_url": "https://arxiv.org/abs/2005.11401v4",
+      "local_path": "data/papers/retrieval-augmented-generation-2005.11401.pdf",
+      "license_or_permission": {
+        "name": "arXiv non-exclusive distribution license 1.0",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "redistribute_pdf_in_repo": false,
+        "note": "The arXiv license authorizes arXiv distribution; it is not treated as a general third-party redistribution license."
+      },
+      "physical_pages": 19,
+      "included_page_ranges": ["1-10", "17-19"],
+      "excluded_page_ranges": [
+        {"range": "11-16", "reason": "references"}
+      ],
+      "included_pages_count": 13,
+      "included_characters_normalized": 48138,
+      "sha256": "23e3249e9a1e75418d82efecab0ea8c4d033b89c93742f63208d47ce01f21233"
+    }
+  ]
+}

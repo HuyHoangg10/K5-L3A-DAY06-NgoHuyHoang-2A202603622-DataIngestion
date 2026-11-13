@@ -1,0 +1,130 @@
+{
+  "checkpoint": "CP4",
+  "generated_at": "2026-11-13T08:17:48.011818+00:00",
+  "vector_store": {
+    "name": "Qdrant local persistent mode",
+    "client_version": "1.20.0",
+    "path": "starter\\qdrant_storage",
+    "distance": "cosine",
+    "search_mode": "exact local search",
+    "collections": [
+      "day6_a",
+      "day6_b",
+      "day6_c"
+    ]
+  },
+  "embedding": {
+    "provider": "local SentenceTransformers",
+    "model_id": "google/embeddinggemma-2",
+    "model_revision": "f9972ac22e696a105c482202646979e33e4b5a1e",
+    "dimensions": 768,
+    "dtype": "float32",
+    "device": "cpu",
+    "normalized": true,
+    "query_prompt": "QuestionAnswering",
+    "document_format": "title: {manifest title} | text: {chunk text}",
+    "batch_size": 8,
+    "text_only": true,
+    "api_cost_usd": 0
+  },
+  "strategies": {
+    "A": {
+      "chunks": 416,
+      "filter": false
+    },
+    "B": {
+      "chunks": 253,
+      "filter": false
+    },
+    "C": {
+      "chunks": 253,
+      "same_chunks_and_vectors_as": "B",
+      "filter": "only when supplied by question/context"
+    }
+  },
+  "timing_seconds": {
+    "model_load": 7.073,
+    "embed_A": 300.695,
+    "embed_B_and_reuse_for_C": 259.052,
+    "first_store_sync": 6.147,
+    "reload_and_idempotent_sync": 7.272,
+    "total": 580.857
+  },
+  "persistence_check": {
+    "first_sync": {
+      "A": {
+        "before": 0,
+        "upserted": 416,
+        "deleted_stale": 0,
+        "after": 416
+      },
+      "B": {
+        "before": 0,
+        "upserted": 253,
+        "deleted_stale": 0,
+        "after": 253
+      },
+      "C": {
+        "before": 0,
+        "upserted": 253,
+        "deleted_stale": 0,
+        "after": 253
+      }
+    },
+    "counts_before_close": {
+      "A": 416,
+      "B": 253,
+      "C": 253
+    },
+    "second_sync_after_reload": {
+      "A": {
+        "before": 416,
+        "upserted": 416,
+        "deleted_stale": 0,
+        "after": 416
+      },
+      "B": {
+        "before": 253,
+        "upserted": 253,
+        "deleted_stale": 0,
+        "after": 253
+      },
+      "C": {
+        "before": 253,
+        "upserted": 253,
+        "deleted_stale": 0,
+        "after": 253
+      }
+    },
+    "counts_after_reload": {
+      "A": 416,
+      "B": 253,
+      "C": 253
+    },
+    "expected_counts": {
+      "A": 416,
+      "B": 253,
+      "C": 253
+    },
+    "no_duplicates": true
+  },
+  "smoke_search": {
+    "question": "According to the NAACL-HLT 2019 paper, how is a token's input representation constructed in BERT?",
+    "top_k": 3,
+    "strategies_returning_top3": [
+      "A",
+      "B",
+      "C"
+    ],
+    "strategy_C_filter": {
+      "venue": "NAACL-HLT 2019"
+    },
+    "strategy_C_filter_compliance": "3/3",
+    "trace": "starter/results/cp4/smoke_top3.json"
+  },
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.15.0+cpu",
+    "sentence_transformers": "6.3.0"
+  }
+}

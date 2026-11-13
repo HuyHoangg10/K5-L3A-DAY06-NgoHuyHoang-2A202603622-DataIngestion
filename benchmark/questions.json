@@ -1,0 +1,206 @@
+[
+  {
+    "id": "q01",
+    "type": "metadata_scoped_direct",
+    "split": "dev",
+    "question": "According to the NAACL-HLT 2019 paper, what are the layer count, hidden size, attention-head count, and parameter count of BERTBASE?",
+    "expected_answer": "BERTBASE has 12 layers, hidden size 768, 12 self-attention heads, and 110 million parameters.",
+    "gold_source_id": "bert-1810.04805v2",
+    "gold_page": 3,
+    "evidence_quote": "We primarily report results on two model sizes: BERTBASE (L=12, H=768, A=12, Total Param- eters=110M) and BERTLARGE (L=24, H=1024, A=16, Total Parameters=340M).",
+    "filter": {"venue": "NAACL-HLT 2019"}
+  },
+  {
+    "id": "q02",
+    "type": "direct",
+    "split": "dev",
+    "question": "How is a token's input representation constructed in BERT?",
+    "expected_answer": "It is the sum of the corresponding token, segment, and position embeddings.",
+    "gold_source_id": "bert-1810.04805v2",
+    "gold_page": 4,
+    "evidence_quote": "For a given token, its input representation is constructed by summing the corresponding token, segment, and position embeddings."
+  },
+  {
+    "id": "q03",
+    "type": "condition_detail",
+    "split": "dev",
+    "question": "Once a token is selected for masked-language-model prediction in BERT, how often is it replaced by MASK, by a random token, or left unchanged?",
+    "expected_answer": "It is replaced by [MASK] 80% of the time, by a random token 10% of the time, and left unchanged 10% of the time.",
+    "gold_source_id": "bert-1810.04805v2",
+    "gold_page": 4,
+    "evidence_quote": "If the i-th token is chosen, we replace thei-th token with (1) the [MASK] token 80% of the time (2) a random token 10% of the time (3) the unchanged i-th token 10% of the time."
+  },
+  {
+    "id": "q04",
+    "type": "purpose",
+    "split": "dev",
+    "question": "What relationship does BERT's next sentence prediction task train the model to understand?",
+    "expected_answer": "It trains BERT to understand relationships between two sentences through a binary next-sentence prediction task generated from monolingual text.",
+    "gold_source_id": "bert-1810.04805v2",
+    "gold_page": 4,
+    "evidence_quote": "In order to train a model that understands sentence rela- tionships, we pre-train for a binarized next sen- tence prediction task that can be trivially gener- ated from any monolingual corpus."
+  },
+  {
+    "id": "q05",
+    "type": "comparison",
+    "split": "test",
+    "question": "During BERT fine-tuning, which representation is used for token-level tasks and which one is used for classification tasks?",
+    "expected_answer": "Token representations are used for token-level tasks, while the [CLS] representation is used for classification tasks.",
+    "gold_source_id": "bert-1810.04805v2",
+    "gold_page": 5,
+    "evidence_quote": "At the output, the token rep- resentations are fed into an output layer for token- level tasks, such as sequence tagging or question answering, and the [CLS] representation is fed into an output layer for classiﬁcation, such as en- tailment or sentiment analysis."
+  },
+  {
+    "id": "q06",
+    "type": "metadata_scoped_problem",
+    "split": "dev",
+    "question": "In the EMNLP-IJCNLP 2019 paper, why is standard BERT impractical for finding the most similar pair among 10,000 sentences?",
+    "expected_answer": "It requires about 50 million pairwise inference computations, taking roughly 65 hours.",
+    "gold_source_id": "sentence-bert-1908.10084v1",
+    "gold_page": 1,
+    "evidence_quote": "Finding the most sim- ilar pair in a collection of 10,000 sentences requires about 50 million inference computa- tions (~65 hours) with BERT.",
+    "filter": {"venue": "EMNLP-IJCNLP 2019"}
+  },
+  {
+    "id": "q07",
+    "type": "architecture",
+    "split": "dev",
+    "question": "What network structures does Sentence-BERT use to produce semantically meaningful sentence embeddings?",
+    "expected_answer": "It uses siamese and triplet network structures on top of pretrained BERT.",
+    "gold_source_id": "sentence-bert-1908.10084v1",
+    "gold_page": 1,
+    "evidence_quote": "In this publication, we present Sentence-BERT (SBERT), a modiﬁcation of the pretrained BERT network that use siamese and triplet net- work structures to derive semantically mean- ingful sentence embeddings that can be com- pared using cosine-similarity."
+  },
+  {
+    "id": "q08",
+    "type": "efficiency",
+    "split": "dev",
+    "question": "With SBERT, approximately how long do embedding 10,000 sentences and computing their cosine similarities take?",
+    "expected_answer": "Computing the 10,000 embeddings takes about 5 seconds and computing cosine similarity takes about 0.01 seconds.",
+    "gold_source_id": "sentence-bert-1908.10084v1",
+    "gold_page": 2,
+    "evidence_quote": "most similar sentence pair in a collection of 10,000 sentences is reduced from 65 hours with BERT to the computation of 10,000 sentence embeddings (~5 seconds with SBERT) and computing cosine- similarity (~0.01 seconds)."
+  },
+  {
+    "id": "q09",
+    "type": "enumeration",
+    "split": "dev",
+    "question": "Which three pooling strategies were evaluated for SBERT sentence embeddings?",
+    "expected_answer": "CLS-token pooling, mean pooling over all output vectors, and max-over-time pooling.",
+    "gold_source_id": "sentence-bert-1908.10084v1",
+    "gold_page": 3,
+    "evidence_quote": "We experiment with three pool- ing strategies: Using the output of the CLS-token, computing the mean of all output vectors ( MEAN- strategy), and computing a max-over-time of the output vectors (MAX-strategy)."
+  },
+  {
+    "id": "q10",
+    "type": "default_setting",
+    "split": "test",
+    "question": "What default pooling strategy does SBERT use?",
+    "expected_answer": "MEAN pooling.",
+    "gold_source_id": "sentence-bert-1908.10084v1",
+    "gold_page": 4,
+    "evidence_quote": "Our de- fault pooling strategy is MEAN."
+  },
+  {
+    "id": "q11",
+    "type": "metadata_scoped_result",
+    "split": "dev",
+    "question": "Among the 2020 papers, by how many absolute percentage points did the dense retriever outperform Lucene-BM25 on top-20 passage retrieval accuracy?",
+    "expected_answer": "It outperformed Lucene-BM25 by 9 to 19 absolute percentage points.",
+    "gold_source_id": "dpr-2004.04906v3",
+    "gold_page": 1,
+    "evidence_quote": "When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene- BM25 system greatly by 9%-19% absolute in terms of top-20 passage retrieval accuracy",
+    "filter": {"year": 2020}
+  },
+  {
+    "id": "q12",
+    "type": "formula",
+    "split": "dev",
+    "question": "How does DPR define similarity between a question and a passage?",
+    "expected_answer": "DPR uses the dot product of the question encoder vector and passage encoder vector.",
+    "gold_source_id": "dpr-2004.04906v3",
+    "gold_page": 3,
+    "evidence_quote": "We deﬁne the similarity between the question and the passage using the dot product of their vectors: sim(q,p ) = EQ(q)⊺EP (p)."
+  },
+  {
+    "id": "q13",
+    "type": "enumeration",
+    "split": "dev",
+    "question": "What three types of negative passages does DPR consider during training?",
+    "expected_answer": "Random passages, non-answer passages retrieved by BM25, and gold passages paired with other training questions.",
+    "gold_source_id": "dpr-2004.04906v3",
+    "gold_page": 3,
+    "evidence_quote": "We consider three different types of negatives: (1) Random: any random passage from the corpus; (2) BM25: top passages returned by BM25 which don’t contain the answer but match most question tokens; (3) Gold: positive passages paired with other questions which appear in the training set."
+  },
+  {
+    "id": "q14",
+    "type": "best_configuration",
+    "split": "dev",
+    "question": "Which negative passages are used by DPR's best training configuration?",
+    "expected_answer": "Gold passages from the same mini-batch plus one BM25 negative passage.",
+    "gold_source_id": "dpr-2004.04906v3",
+    "gold_page": 3,
+    "evidence_quote": "Our best model uses gold passages from the same mini-batch and one BM25 negative passage."
+  },
+  {
+    "id": "q15",
+    "type": "formal_definition",
+    "split": "test",
+    "question": "Formally, what does an open-domain QA retriever return from a corpus for a question?",
+    "expected_answer": "It returns a much smaller filtered set of k texts from the corpus, where k is far smaller than the corpus size.",
+    "gold_source_id": "dpr-2004.04906v3",
+    "gold_page": 2,
+    "evidence_quote": "Formally speaking, a retriever R : (q,C)→C F is a function that takes as input a questionq and a corpusC and returns a much smaller ﬁlter set of textsCF⊂C , where|CF| =k≪|C| ."
+  },
+  {
+    "id": "q16",
+    "type": "architecture",
+    "split": "dev",
+    "question": "What are the parametric and non-parametric memories in the original RAG model?",
+    "expected_answer": "The parametric memory is a pretrained seq2seq model; the non-parametric memory is a dense Wikipedia vector index accessed by a pretrained neural retriever.",
+    "gold_source_id": "rag-2005.11401v4",
+    "gold_page": 1,
+    "evidence_quote": "We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever."
+  },
+  {
+    "id": "q17",
+    "type": "comparison",
+    "split": "dev",
+    "question": "How do RAG-Sequence and RAG-Token differ in which retrieved document they use while generating tokens?",
+    "expected_answer": "RAG-Sequence uses the same document for every target token, while RAG-Token can use a different document for each target token.",
+    "gold_source_id": "rag-2005.11401v4",
+    "gold_page": 3,
+    "evidence_quote": "In one approach, RAG-Sequence, the model uses the same document to predict each target token. The second approach, RAG-Token, can predict each target token based on a different document."
+  },
+  {
+    "id": "q18",
+    "type": "model_detail",
+    "split": "dev",
+    "question": "Which generator does the RAG paper use, and how many parameters does it have?",
+    "expected_answer": "It uses BART-large, a pretrained seq2seq transformer with 400 million parameters.",
+    "gold_source_id": "rag-2005.11401v4",
+    "gold_page": 3,
+    "evidence_quote": "We use BART-large [32], a pre-trained seq2seq transformer [58] with 400M parameters."
+  },
+  {
+    "id": "q19",
+    "type": "metadata_scoped_training",
+    "split": "test",
+    "question": "According to the NeurIPS 2020 paper, which RAG components are kept fixed and which are fine-tuned?",
+    "expected_answer": "The document encoder and index are kept fixed; the query encoder and BART generator are fine-tuned.",
+    "gold_source_id": "rag-2005.11401v4",
+    "gold_page": 4,
+    "evidence_quote": "We do not ﬁnd this step necessary for strong performance, and keep the document encoder (and index) ﬁxed, only ﬁne-tuning the query encoder BERTq and the BART generator.",
+    "filter": {"venue": "NeurIPS 2020"}
+  },
+  {
+    "id": "q20",
+    "type": "updateability",
+    "split": "test",
+    "question": "Why can RAG update its knowledge at test time more easily than a parametric-only model?",
+    "expected_answer": "RAG can replace or update its non-parametric memory, whereas parametric-only models such as T5 or BART need additional training to change their behavior.",
+    "gold_source_id": "rag-2005.11401v4",
+    "gold_page": 7,
+    "evidence_quote": "Index hot-swapping An advantage of non-parametric memory models like RAG is that knowledge can be easily updated at test time. Parametric-only models like T5 or BART need further training to update their behavior as the world changes."
+  }
+]
